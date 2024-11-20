@@ -2,8 +2,6 @@
 #from functions import get_todos, write_todos
 import functions
 import time
-import functions
-import time
 timenow = time.strftime(" %d %a - %m %b- %Y ; %H : %M : %S")
 print(f"it is : {timenow}")
 

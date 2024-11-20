@@ -1,5 +1,5 @@
 # Created on iPad.
-FILEPATH = 'files/todos.txt'
+FILEPATH = '../files/todos.txt'
 
 def get_todos(filepath=FILEPATH):
     """read a text file and return list """
