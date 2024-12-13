@@ -1,19 +1,25 @@
-from optparse import Values
-
 import functions
 import FreeSimpleGUI as sg
 import time
+import os
+
+if not os.path.exists("todosListapp/todos.txt"):
+    with open("todosListapp/todos.txt", "w") as file:
+        pass
+
 
 sg.theme("DarkBlack")
 
 clock = sg.Text('', key='timer')
 label = sg.Text("Type in a to-do: ")
 input_box = sg.InputText(tooltip= "Enter todo", key="todo")
-add_button = sg.Button("Add", size=10)
+add_button = sg.Button(size=2, image_source="add.png", mouseover_colors="#8CAE7F",
+                       tooltip="Add to do", key="Add")
 list_box = sg.Listbox(values=functions.get_todos(), key='todos',
                       enable_events=True, size=[45, 10])
 edit_button = sg.Button("Edit")
-complete_button = sg.Button("Complete")
+complete_button = sg.Button(size=2, image_source="complete.png", mouseover_colors="#E4080A",
+                            tooltip="Complete todo", key="Complete")
 exit_button = sg.Button("Exit")
 
 layout = [[clock],
